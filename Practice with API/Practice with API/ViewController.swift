@@ -12,17 +12,31 @@ class ViewController: UIViewController {
 
     private let tableView = UITableView()
     
-    var news = [Articles]()
+    private var news = [Articles]()
+    private var filterNews = [Articles]()
+    
+    private let searchBar = UISearchBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureTableView()
         getDataFromApi { [weak self] articles in
             self?.news = articles
+            self?.filterNews = articles
             self?.tableView.reloadData()
         }
+        setupSearchBar()
     }
 
+    func setupSearchBar() {
+        navigationItem.titleView = searchBar
+        searchBar.delegate = self
+        searchBar.placeholder = "Search"
+        //searchBar.autocapitalizationType = .none
+        
+    }
+    
     func configureTableView() {
         view.addSubview(tableView)
         tableView.register(CustomCell.self, forCellReuseIdentifier: "custom")
@@ -44,20 +58,34 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filterNews = []
+        if searchText == "" {
+            filterNews = news
+        } else {
+            filterNews = news.filter({ articles in
+                (articles.author?.lowercased() ?? "").contains(searchText.lowercased())
+            })
+        }
+        self.tableView.reloadData()
+    }
+}
+
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let articles = news[indexPath.row]
+        let articles = filterNews[indexPath.row]
         performSegue(withIdentifier: "custom", sender: articles)
     }
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return news.count
+        return filterNews.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "custom", for: indexPath) as? CustomCell else { return UITableViewCell() }
-        cell.configure(name: news[indexPath.row].author ?? "Unknown")
+        cell.configure(name: filterNews[indexPath.row].author ?? "Unknown")
         return cell
     }
 }
