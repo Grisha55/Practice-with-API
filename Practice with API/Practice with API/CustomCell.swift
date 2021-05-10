@@ -11,8 +11,8 @@ class CustomCell: UITableViewCell {
 
     private let nameLabel: UILabel = {
         let name = UILabel()
-        name.text = "Everything is good!"
         name.textColor = .black
+        name.textAlignment = .center
         name.numberOfLines = 0
         name.font = name.font.withSize(30)
         name.translatesAutoresizingMaskIntoConstraints = false
@@ -28,9 +28,18 @@ class CustomCell: UITableViewCell {
     func setNameLabelConstraints() {
         nameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        self.nameLabel.text = nil
+    }
+    
+    func configure(name: String) {
+        self.nameLabel.text = name
     }
 }

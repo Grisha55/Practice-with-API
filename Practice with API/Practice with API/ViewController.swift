@@ -11,9 +11,15 @@ class ViewController: UIViewController {
 
     private let tableView = UITableView()
     
+    var news = [Articles]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        getDataFromApi { [weak self] articles in
+            self?.news = articles
+            self?.tableView.reloadData()
+        }
     }
 
     func configureTableView() {
@@ -33,11 +39,11 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return news.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "custom", for: indexPath) as? CustomCell else { return UITableViewCell() }
-        
+        cell.configure(name: news[indexPath.row].author ?? "Unknown")
         return cell
     }
 }
