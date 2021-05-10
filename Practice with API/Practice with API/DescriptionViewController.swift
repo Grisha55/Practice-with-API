@@ -12,6 +12,7 @@ class DescriptionViewController: UIViewController {
     let nameLabel: UILabel = {
         let name = UILabel()
         name.font = name.font.withSize(30)
+        name.textAlignment = .center
         name.textColor = .brown
         name.numberOfLines = 0
         name.translatesAutoresizingMaskIntoConstraints = false
@@ -59,6 +60,7 @@ class DescriptionViewController: UIViewController {
     private func setNameLabelConstraints() {
         nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         nameLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
     }
     
     private func setTitleLabelConstraints() {

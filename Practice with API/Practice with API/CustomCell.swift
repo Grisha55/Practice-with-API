@@ -13,8 +13,8 @@ class CustomCell: UITableViewCell {
         let name = UILabel()
         name.textColor = .black
         name.textAlignment = .center
-        name.numberOfLines = 0
-        name.font = name.font.withSize(30)
+        name.numberOfLines = 3
+        name.font = name.font.withSize(22)
         name.translatesAutoresizingMaskIntoConstraints = false
         return name
     }()
