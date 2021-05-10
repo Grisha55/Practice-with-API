@@ -18,9 +18,11 @@ class ViewController: UIViewController {
 
     func configureTableView() {
         view.addSubview(tableView)
+        tableView.register(CustomCell.self, forCellReuseIdentifier: "custom")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        tableView.rowHeight = 100
     }
 
 }
@@ -34,6 +36,8 @@ extension ViewController: UITableViewDataSource {
         return 5
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "custom", for: indexPath) as? CustomCell else { return UITableViewCell() }
+        
+        return cell
     }
 }
