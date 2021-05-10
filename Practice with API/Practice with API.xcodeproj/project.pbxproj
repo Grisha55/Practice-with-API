@@ -15,6 +15,7 @@
 		BE8F916B26491C16004FD15C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE8F916926491C16004FD15C /* LaunchScreen.storyboard */; };
 		BEEFE3C0264921DC006A9FB5 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEFE3BF264921DC006A9FB5 /* CustomCell.swift */; };
 		BEEFE3C22649242D006A9FB5 /* GettingDataFromApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEFE3C12649242D006A9FB5 /* GettingDataFromApi.swift */; };
+		BEEFE3C426492ADC006A9FB5 /* DescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEFE3C326492ADC006A9FB5 /* DescriptionViewController.swift */; };
 		C6CAB093623FC3A9866EC517 /* Pods_Practice_with_API.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620A11D6BDB08BABB11DA82F /* Pods_Practice_with_API.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		BE8F916C26491C16004FD15C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEEFE3BF264921DC006A9FB5 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		BEEFE3C12649242D006A9FB5 /* GettingDataFromApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingDataFromApi.swift; sourceTree = "<group>"; };
+		BEEFE3C326492ADC006A9FB5 /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		D1AC474752BF9F207C10EE5F /* Pods-Practice with API.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice with API.debug.xcconfig"; path = "Target Support Files/Pods-Practice with API/Pods-Practice with API.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				BE8F915E26491C13004FD15C /* AppDelegate.swift */,
 				BE8F916026491C13004FD15C /* SceneDelegate.swift */,
 				BE8F916226491C13004FD15C /* ViewController.swift */,
+				BEEFE3C326492ADC006A9FB5 /* DescriptionViewController.swift */,
 				BEEFE3BF264921DC006A9FB5 /* CustomCell.swift */,
 				BE8F916426491C13004FD15C /* Main.storyboard */,
 				BE8F916726491C16004FD15C /* Assets.xcassets */,
@@ -214,6 +217,7 @@
 				BE8F916326491C13004FD15C /* ViewController.swift in Sources */,
 				BE8F915F26491C13004FD15C /* AppDelegate.swift in Sources */,
 				BEEFE3C0264921DC006A9FB5 /* CustomCell.swift in Sources */,
+				BEEFE3C426492ADC006A9FB5 /* DescriptionViewController.swift in Sources */,
 				BE8F916126491C13004FD15C /* SceneDelegate.swift in Sources */,
 				BEEFE3C22649242D006A9FB5 /* GettingDataFromApi.swift in Sources */,
 			);

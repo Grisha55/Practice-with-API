@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Автор-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Practice_with_API" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,11 +18,30 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RWq-RV-MDb"/>
+                    <navigationItem key="navigationItem" title="Автор" id="RWq-RV-MDb"/>
+                    <connections>
+                        <segue destination="AcR-Xw-tPf" kind="show" identifier="custom" id="31y-jA-jGw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="104.46428571428571"/>
+        </scene>
+        <!--Описание-->
+        <scene sceneID="OEA-MP-Vi3">
+            <objects>
+                <viewController id="AcR-Xw-tPf" customClass="DescriptionViewController" customModule="Practice_with_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y0h-rU-c8j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FzR-jg-OFb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Описание" id="Dgu-CF-W6v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCL-mN-G7A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="104"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4a4-ho-nUU">
