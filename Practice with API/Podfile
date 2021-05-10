@@ -6,5 +6,6 @@ target 'Practice with API' do
   use_frameworks!
 
   # Pods for Practice with API
-
+  pod 'Alamofire', '~> 5.2'
+  pod 'Kingfisher', '~> 6.0'
 end
