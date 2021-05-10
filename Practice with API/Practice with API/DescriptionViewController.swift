@@ -11,7 +11,6 @@ class DescriptionViewController: UIViewController {
     
     let nameLabel: UILabel = {
         let name = UILabel()
-        name.text = "Name label"
         name.font = name.font.withSize(40)
         name.textColor = .brown
         name.numberOfLines = 0
@@ -21,7 +20,6 @@ class DescriptionViewController: UIViewController {
     
     let titleLabel: UILabel = {
         let title = UILabel()
-        title.text = "Title label"
         title.font = title.font.withSize(20)
         title.textColor = .black
         title.numberOfLines = 0
@@ -38,7 +36,6 @@ class DescriptionViewController: UIViewController {
     
     let publishedAtLabel: UILabel = {
         let label = UILabel()
-        label.text = "publishedAT"
         label.textColor = .cyan
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

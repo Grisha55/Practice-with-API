@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
 
@@ -30,11 +31,24 @@ class ViewController: UIViewController {
         tableView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         tableView.rowHeight = 100
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let descriptionVC = segue.destination as? DescriptionViewController else { return }
+        guard let articles = sender as? Articles else { return }
+        descriptionVC.nameLabel.text = articles.author
+        descriptionVC.titleLabel.text = articles.title
+        descriptionVC.publishedAtLabel.text = articles.publishedAt
+        descriptionVC.photoImage.kf.setImage(with: URL(string: articles.urlToImage ?? ""))
+        
+    }
 
 }
 
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let articles = news[indexPath.row]
+        performSegue(withIdentifier: "custom", sender: articles)
+    }
 }
 
 extension ViewController: UITableViewDataSource {
